@@ -1,0 +1,22 @@
+
+#!/bin/bash
+
+
+#Scripts for security 
+
+#Name: Victor
+
+#The ouput of this file will be sent to Suspicious_Result
+
+
+#This command is used to find suspicous failed login attempts, the -i option display ip address
+#grep will fetch for "notty" which point to failed login attempts
+lastb -i | grep notty >> ./Suspicious_Result
+
+echo "<-----------------------------------------------------------> " ./Suspicious_Result
+
+
+last >> ./Suspicious_Result    #This command displays the entire logging history 
+
+
+echo "DONE"

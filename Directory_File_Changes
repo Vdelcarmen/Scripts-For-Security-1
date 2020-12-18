@@ -1,0 +1,24 @@
+
+#!/bin/bash
+
+
+#Script for security Changes in directory
+#Name: Victor Delcarmen
+#In his directory we're trying to find directory creation in the "/var/log/ directory"
+
+#For this script to work a copy of "/var/log" directory must be created
+#The copy must be called called Original_log_Directory
+#Then a directory must be created in the /var/log directory,
+
+
+#The diff utility is used to compare two files/directories together in order to find differences
+#The diff command is comparing "Original_log_Directory" with the "/var/log/" directory
+This script will point ou the creation of the file you created in /var/log
+
+
+#The output will be redirected to a file called "Changes"
+diff Original_log_Directory/  /var/log > Changes
+
+
+#Grepping for mkdir will show us all the creating of directories
+cat Changes | grep mkdir  
